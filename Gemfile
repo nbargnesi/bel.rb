@@ -4,6 +4,7 @@ gem 'ffi'
 
 group :development do
   gem 'rake', '~> 10.3'
+  gem 'rake-compiler', '~> 0.9.5'
   gem 'rspec', '~> 2.14'
   gem 'yard', '~> 0.8'
   gem 'rdoc', '~> 4.0'

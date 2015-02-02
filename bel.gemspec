@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.date               = %q{2014-01-13}
   spec.email              = %q{abargnesi@selventa.com}
   spec.files              = Dir.glob('lib/**/*.rb') << 'LICENSE'
+  spec.files              = spec.files + Dir.glob('ext/**/*')
   spec.executables        = Dir.glob('bin/*').map(&File.method(:basename))
   spec.homepage           = 'https://github.com/OpenBEL/bel.rb'
   spec.require_paths      = ["lib"]
@@ -18,7 +19,10 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version \
                           = '>= 1.9.2'
 
+  spec.extensions = 'ext/mri/extconf.rb'
+
   spec.add_development_dependency 'rake',    '~> 10.3'
+  spec.add_development_dependency 'rake-compiler', '~> 0.9.2'
   spec.add_development_dependency 'rspec',   '~> 2.14'
   spec.add_development_dependency 'yard',    '~> 0.8'
   spec.add_development_dependency 'rdoc',    '~> 4.0'

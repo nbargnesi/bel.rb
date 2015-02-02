@@ -13,5 +13,13 @@ module BEL
   require_relative './features.rb'
   require_relative './util.rb'
 end
+
+begin
+  RUBY_VERSION =~ /(\d+.\d+)/
+  require '#{$1}/bel_ext'
+rescue LoadError
+  require 'bel_ext'
+end
+
 # vim: ts=2 sw=2:
 # encoding: utf-8
